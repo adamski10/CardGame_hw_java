@@ -57,17 +57,24 @@ public class Dealer {
 
     }
 
+
+
     public void showTheWinner(Dealer dealer, Player player){
+
+
         int value1 = dealer.showCards();
         int value2 = player.showCards();
-        if(value1  > value2 && value1 <= 21 || value2 > 21){
+
+        if (value1 == value2) {
+            System.out.println("Draw");
+        }
+        else if (value1  > value2 && value1 <= 21){
             System.out.println("The winner is " + dealer.getName() + " with " + value1 + " points.");
             System.out.println(player.getName() + " had " + value2 + " points.");
-        }else if (value2  > value1 && value2 <= 21 || value1 > 21) {
+        }
+        else if (value2  > value1 || value2 > 21) {
             System.out.println("The winner is " + player.getName() + " with " + value2 + " points.");
             System.out.println(dealer.getName() + " had " + value2 + " points.");
-        }else if (value1 == value2) {
-            System.out.println("Draw");
         }
     }
 }
